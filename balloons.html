@@ -11,12 +11,45 @@
     <!-- pickadate css -->
     <link rel="stylesheet" href="css/classic.css">
     <link rel="stylesheet" href="css/classic.date.css">
+    <!-- animate.css -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow|Questrial" rel="stylesheet">
+    <!-- custom css -->
+    <style>
+        h1 {
+            font-family: 'Londrina Shadow';
+            color: slategray;
+            font-size: 3.5em;
+        }
+
+        body {
+            font-family: 'Questrial';
+        }
+
+        h1.animated {
+            display: inline-block;
+        }
+
+        .ball{
+            visibility: hidden;
+        }
+        
+    </style>
     <title>Balloons</title>
 </head>
 <body>
     <!-- content -->
     <div class="container">
-        <h1>Happy Birthday!</h1><hr />
+        <div id="toast" class="toast">
+            <div class="toast-body">
+                Please select a balloon.
+            </div>
+        </div>
+        <h1 id="birthdayHeader">Happy Birthday!</h1><hr />
         <form role="form">
             <div class="row">
                 <div class="col-sm">
@@ -28,6 +61,28 @@
                         <label for="birthday">Birthday</label>
                         <input type="text" class="form-control" id="birthday" placeholder="Enter birthday" />
                     </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Select your favorite balloons</h5>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="all">
+                                <label class="form-check-label" for="all"><strong>Select all</strong></label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="red">
+                                <label class="form-check-label" for="red" data-color="red">Red balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="green">
+                                <label class="form-check-label" for="green" data-color="green">Green balloons</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="blue">
+                                <label class="form-check-label" for="blue" data-color="blue">Blue balloons</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary mt-3" id="submit">Submit</button>
                 </div>
                 <div class="col-sm">
                     <img src="media/red.png" class="ball" alt="red balloon" id="redImg" />
